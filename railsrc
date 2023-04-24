@@ -1,0 +1,6 @@
+# ~.railsrc
+
+--skip-test
+--database=postgresql
+--css=postcss
+--template=~/VCS/rails_template.rb
