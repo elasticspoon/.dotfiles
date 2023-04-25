@@ -136,7 +136,7 @@ function _bash_prompt() {
 
 	# finally, set PS1
 	# PS1="${PS1_MAGENTA}\u ${PS1_GREY}at${PS1_YELLOW} \h ${PS1_GREY}in${PS1_GREEN} \w ${EXIT_CODE_PROMPT} ${GIT_INFO}\
-	PS1="${PS1_GREEN}\u@\h: $(__parse_git_status)${PS1_CYAN}[ \w ]\n${PS1_WHITE}\\\$ ${EXIT_CODE_PROMPT}${SCREEN_ESC}${PS1_RESET} "
+	PS1="${PS1_GREEN}\u@\h:$(__parse_git_status)${PS1_CYAN}[ \w ]\n${PS1_WHITE}\\\$ ${EXIT_CODE_PROMPT}${SCREEN_ESC}${PS1_RESET} "
 	# PS1="${PS1_GREEN}\u@\h:${PS1_CYAN} [ \w ]\n${PS1_WHITE}\\\$ ${EXIT_CODE_PROMPT}${SCREEN_ESC}${PS1_RESET} "
 }
 
