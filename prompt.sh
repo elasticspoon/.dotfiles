@@ -79,7 +79,6 @@ _curr_promt_idea() {
 	branch_status="$(_git_stats)"
 
 	if [[ ${branch_status} =~ .*[0-9].* ]]; then
-		echo "bs:${branch_status}:bs"
 		branch_status="${branch_status//+/"\u2191"}"
 		branch_status="${branch_status//-/"\u2193"}"
 		current_prompt=" ${PS1_WHITE}${branch_status}${current_prompt}${PS1_GREEN}"
