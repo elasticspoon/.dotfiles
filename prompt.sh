@@ -78,10 +78,10 @@ _curr_promt_idea() {
 	untracked_files="$(_git_status 2)"
 	branch_status="$(_git_stats)"
 
-	if [[ ${branch_status} =~ .*[0-9]+.* ]]; then
+	if [[ ! branch_status == "" ]]; then
 		branch_status="${branch_status//+/"\u2191"}"
 		branch_status="${branch_status//-/"\u2193"}"
-		branch_status="${branch_status} ${current_prompt}${PS1_GREEN}s:${committed_files} "
+		current_prompt=" ${PS1_WHITE}${branch_status}${current_prompt}${PS1_GREEN}"
 	fi
 
 	if [[ ${committed_files} =~ .*[0-9]+.* ]]; then
