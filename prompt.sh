@@ -94,11 +94,11 @@ __parse_git_status() {
 	fi
 
 	if [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)") > 0 ]]; then
-		echo -n "${PS1_RED}$(__curr_promt_idea)${PS1_RESET}"
+		echo -n "${PS1_RED}$(_curr_promt_idea)${PS1_RESET}"
 	fi
 
 	if [[ $(echo ${gitstat} | wc -l | tr -d ' ') == 0 ]]; then
-		echo -n "${PS1_GREEN}$(__curr_promt_idea)${PS1_RESET}"
+		echo -n "${PS1_GREEN}$(_curr_promt_idea)${PS1_RESET}"
 	fi
 }
 
