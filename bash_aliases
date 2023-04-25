@@ -13,6 +13,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias ,scripts_setup='cd ~/Documents/Setup_Scripts'
 alias ,notes='cd ~/Documents/notes'
 alias ,scripts_test='cd ~/Documents/notes/code/cool_scripts'
+alias ,rb='source ~/.bashrc'
 
 # Rails
 alias ,kill_tmp='rm -f /home/bandito/Documents/odin/rails_projects/private-events/tmp/pids/server.pid'
