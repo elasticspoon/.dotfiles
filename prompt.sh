@@ -81,7 +81,7 @@ _curr_promt_idea() {
 	if [[ ! branch_status == "" ]]; then
 		branch_status="${branch_status//+/"\u2191"}"
 		branch_status="${branch_status//-/"\u2193"}"
-		current_prompt=" ${PS1_WHITE}${branch_status}${current_prompt}${PS1_GREEN}"
+		current_prompt="${PS1_WHITE}${branch_status}${current_prompt}${PS1_GREEN}"
 	fi
 
 	if [[ ${committed_files} =~ .*[0-9]+.* ]]; then
