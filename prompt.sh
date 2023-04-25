@@ -62,6 +62,7 @@ s,[^[]*\[([^]]*)\].*,\(\1\),g
 }"
 }
 readonly _git_status_expr=("^[AMDRCU]" "^.[MD]" "^\?\?")
+
 _git_status() {
 	# ,N files for 0=staged 1=modified 2=untracked
 	_in_git_repo
@@ -70,50 +71,32 @@ _git_status() {
 	esac
 }
 
-readonly _git_diff_status_expr=("git diff --cached --stat" "git diff --stat")
-_git_diff_status() {
-	# [(+lines)?(-lines)?] diff stats for 0=staged or 1=modified
-	_in_git_repo
-	case $? in
-	0 | 1) ${_git_diff_status_expr[${1}]} | sed -nre "
-$ {
-    s,([0-9]+) (insertion|deletion)s?\(([+-])\),\3\1,g
-    s,[0-9]+ files? changed,,
-    s,[^0-9+-],,g
-    s,.*,[\0],
-    p
-}" ;;
-	esac
-}
-
-__parse_git_status() {
-	gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\|modified:\)')
-
-	if [[ $(echo ${gitstat} | grep -c "^# Changes to be committed:\|modified:") > 0 ]]; then
-		echo -n "${PS1_YELLOW}$(_curr_promt_idea)${PS1_RESET}"
-	elif [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)") > 0 ]]; then
-		echo -n "${PS1_RED}$(_curr_promt_idea)${PS1_RESET}"
-	else
-		echo -n "${PS1_GREEN}$(_curr_promt_idea)${PS1_RESET}"
-	fi
-}
-
 _curr_promt_idea() {
-	curr="$(_git_stats)$(__git_ps1) "
-	if [[ $(_git_status 0) =~ .*[0-9]+.* ]]; then
-		curr="${curr}s:$(_git_status 0) "
-	fi
-	if [[ $(_git_status 1) =~ .*[0-9]+.* ]]; then
-		curr="${curr}m:$(_git_status 1) "
-	fi
-	if [[ $(_git_status 2) =~ .*[0-9]+.* ]]; then
-		curr="${curr}u:$(_git_status 2) "
+	current_prompt="${PS1_MAGENTA}$(__git_ps1) "
+	committed_files="$(_git_status 0)"
+	modified_files="$(_git_status 1)"
+	untracked_files="$(_git_status 2)"
+	branch_status="$(_git_stats)"
+
+	if [[ ${branch_status} =~ .*[0-9]+.* ]]; then
+		branch_status="${branch_status//+/"\u2191"}"
+		branch_status="${branch_status//-/"\u2193"}"
+		branch_status="${branch_status} ${current_prompt}${PS1_GREEN}s:${committed_files} "
 	fi
 
-	curr="${curr//+/"\u2191"}"
-	curr="${curr//-/"\u2193"}"
+	if [[ ${committed_files} =~ .*[0-9]+.* ]]; then
+		current_prompt="${current_prompt}${PS1_GREEN}s:${committed_files} "
+	fi
 
-	echo -n -e " ${curr}"
+	if [[ ${modified_files} =~ .*[0-9]+.* ]]; then
+		current_prompt="${current_prompt}${PS1_YELLOW}m:${modified_files} "
+	fi
+
+	if [[ ${untracked_files} =~ .*[0-9]+.* ]]; then
+		current_prompt="${current_prompt}${PS1_RED}u:${untracked_files} "
+	fi
+
+	echo -n -e "${current_prompt}"
 }
 
 # function to set PS1
@@ -136,7 +119,7 @@ function _bash_prompt() {
 
 	# finally, set PS1
 	# PS1="${PS1_MAGENTA}\u ${PS1_GREY}at${PS1_YELLOW} \h ${PS1_GREY}in${PS1_GREEN} \w ${EXIT_CODE_PROMPT} ${GIT_INFO}\
-	PS1="${PS1_GREEN}\u@\h:$(__parse_git_status)${PS1_CYAN}[ \w ]\n${PS1_WHITE}\\\$ ${EXIT_CODE_PROMPT}${SCREEN_ESC}${PS1_RESET} "
+	PS1="${PS1_GREEN}\u@\h:$(_curr_promt_idea)${PS1_CYAN}[ \w ]\n${PS1_WHITE}\\\$ ${EXIT_CODE_PROMPT}${SCREEN_ESC}${PS1_RESET} "
 	# PS1="${PS1_GREEN}\u@\h:${PS1_CYAN} [ \w ]\n${PS1_WHITE}\\\$ ${EXIT_CODE_PROMPT}${SCREEN_ESC}${PS1_RESET} "
 }
 
