@@ -113,7 +113,7 @@ _curr_promt_idea() {
 	curr="${curr//+/"\u2191"}"
 	curr="${curr//-/"\u2193"}"
 
-	echo -n -e "${curr}"
+	echo -n -e " ${curr}"
 }
 
 # function to set PS1
