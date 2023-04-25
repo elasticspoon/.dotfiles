@@ -31,8 +31,6 @@ PS1_RED="\[$(
 )\]"
 PS1_RESET="\[$(tput sgr0)\]"
 
-GIT_PS1_SHOWUPSTREAM='auto'
-
 _in_git_repo() {
 	# Check the current dir is actually a repository
 	git status &>/dev/null || return 2
@@ -105,7 +103,7 @@ __parse_git_status() {
 }
 
 _curr_promt_idea() {
-	curr="$(_git_stats)$(_git_branch) "
+	curr="$(_git_stats)$(__git_ps1) "
 	if [[ $(_git_status 0) =~ .*[0-9]+.* ]]; then
 		curr="${curr}s:$(_git_status 0) "
 	fi
@@ -120,19 +118,6 @@ _curr_promt_idea() {
 	curr="${curr//-/"\u2193"}"
 
 	echo -n -e "${curr}"
-}
-
-_fix_ps1() {
-	curr=$(__git_ps1)
-	if [[ $(__git_ps1) =~ .*\<\>\).* ]]; then
-		echo -n -e "\u2191\u2193${curr//<>/""}"
-	elif [[ $(__git_ps1) =~ .*\>\).* ]]; then
-		echo -n -e "\u2191${curr//>/""}"
-	elif [[ $(__git_ps1) =~ .*\<\).* ]]; then
-		echo -n -e "\u2193${curr//</""}"
-	else
-		echo -n -e ${curr}
-	fi
 }
 
 # function to set PS1
