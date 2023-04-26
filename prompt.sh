@@ -73,6 +73,7 @@ _git_status() {
 
 _curr_promt_idea() {
 	current_prompt="${PS1_MAGENTA}$(__git_ps1) "
+
 	committed_files="$(_git_status 0)"
 	modified_files="$(_git_status 1)"
 	untracked_files="$(_git_status 2)"
