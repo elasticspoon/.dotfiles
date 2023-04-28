@@ -1,4 +1,4 @@
 return {
-	{ "echasnovski/mini.surround", enabled = false },
-	{ "ggandor/leap.nvm", enabled = false },
+	--{ "echasnovski/mini.surround", enabled = true },
+	{ "ggandor/leap.nvm", enabled = false, keys = {} },
 }
