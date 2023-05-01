@@ -3,6 +3,8 @@
 -- Add any additional autocmds here
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+-- TODO: make the next two autocmds check if the needed gems
+-- are installed before being created
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = "*.erb",
 	group = augroup,

@@ -23,7 +23,7 @@ return {
 					nls.builtins.formatting.shfmt,
 					-- nls.builtins.diagnostics.flake8,
 					nls.builtins.diagnostics.erb_lint,
-					nls.builtins.formatting.prettierd,
+					-- nls.builtins.formatting.prettierd,
 					nls.builtins.formatting.htmlbeautifier,
 				},
 				on_attach = require("lsp-format").on_attach,
