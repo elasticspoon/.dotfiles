@@ -1,14 +1,16 @@
 return {
-	{ "vim-test/vim-test" },
-	{ "voldikss/vim-floaterm" },
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		opts = {
-			direction = "vertical",
-			size = function()
-				return vim.o.columns * 0.3
-			end,
-		},
+		"christoomey/vim-tmux-runner",
+		init = function()
+			vim.g["VtrOrientation"] = "h"
+		end,
+	},
+	{
+		"vim-test/vim-test",
+		init = function()
+			vim.g["test#strategy"] = "vtr"
+			-- vim.g["test#preserve_screen"] = 0
+		end,
 	},
 }
