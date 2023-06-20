@@ -21,6 +21,8 @@ return {
 					-- nls.builtins.diagnostics.fish,
 					nls.builtins.formatting.stylua,
 					nls.builtins.formatting.shfmt,
+					nls.builtins.formatting.markdown_toc,
+					nls.builtins.formatting.markdownlint,
 					-- nls.builtins.diagnostics.flake8,
 					nls.builtins.diagnostics.erb_lint,
 					-- nls.builtins.formatting.prettierd,
