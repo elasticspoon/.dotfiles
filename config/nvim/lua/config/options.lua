@@ -4,3 +4,10 @@
 local opt = vim.opt
 
 opt.clipboard = "unnamedplus"
+opt.scrolloff = 8
+
+opt.swapfile = false
+opt.backup = false
+
+opt.undodir = vim.fn.expand("~/.vim/undodir")
+opt.undofile = true
