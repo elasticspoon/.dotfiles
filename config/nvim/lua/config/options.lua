@@ -3,7 +3,6 @@
 -- Add any additional options here
 local opt = vim.opt
 
-opt.clipboard = "unnamedplus"
 opt.scrolloff = 8
 
 opt.swapfile = false
