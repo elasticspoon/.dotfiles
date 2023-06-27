@@ -137,12 +137,7 @@ export NVM_DIR="$HOME/.nvm"
 # tmux-sessionizer
 bindkey -s ^f "tmux-sessionizer\n"
 
-NEWLINE=$'\n'
-USER="%(!.%{$fg_bold[red]}.%{$fg_bold[green]%})%m@%n"
-ZSH_THEME_GIT_PROMPT_PREFIX=''
-ZSH_THEME_GIT_SHOW_UPSTREAM=true
-ZSH_THEME_GIT_PROMPT_SUFFIX=''
-LINE_ONE="${USER}%{$fg_bold[blue]%} $(git_prompt_info) %{$fg_bold[cyan]%}[%~]"
-# LINE_TWO="%{$(if [[ $? -eq 0 ]]; then echo "%F{green}>"; else echo "%F{red}%?"; fi)%}% %{$reset_color%}"
-LINE_TWO="%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})%(?.>.%?)"
-PROMPT="${LINE_ONE}${NEWLINE}${LINE_TWO}%{$reset_color%} "
+
+precmd(){
+  PROMPT="$(git_prompt_info)"
+}
