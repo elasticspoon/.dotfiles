@@ -1,30 +1,32 @@
 #!/usr/bin/env bash
 
 if [[ $# -eq 1 ]]; then
-	selected=$1
+	SELECTED=$1
 else
-	selected=$(find ~/Documents/my_site/ ~/Documents/odin/ ~/Documents/ ~/.dotfiles/ -mindepth 0 -maxdepth 1 -type d | fzf)
+	SELECTED=$(find ~/Documents/my_site/ ~/Documents/odin/ ~/Documents/ ~/.dotfiles/ -mindepth 0 -maxdepth 1 -type d | fzf)
 fi
 
-if [[ -z $selected ]]; then
+if [[ -z $SELECTED ]]; then
 	exit 0
 fi
 
 WORKSPACE_NAME=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name')
-selected_name=$(basename "$WORKSPACE_NAME-$selected" | tr . _)
-tmux_running=$(pgrep tmux)
+SELECTED_NAME=$(basename "$WORKSPACE_NAME-$SELECTED" | tr . _)
+TMUX_RUNNING=$(pgrep tmux)
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-	tmux new-session -s $selected_name -c $selected
+echo -en "\e]2;$SELECTED_NAME\a"
+
+if [[ -z $TMUX ]] && [[ -z $TMUX_RUNNING ]]; then
+	tmux new-session -s $SELECTED_NAME -c $SELECTED
 	exit 0
 fi
 
-if ! tmux has-session -t=$selected_name 2>/dev/null; then
-	tmux new-session -ds $selected_name -c $selected
+if ! tmux has-session -t=$SELECTED_NAME 2>/dev/null; then
+	tmux new-session -ds $SELECTED_NAME -c $SELECTED
 fi
 
 if [[ -z $TMUX ]]; then
-	tmux attach-session -t $selected_name
+	tmux attach-session -t $SELECTED_NAME
 else
-	tmux switch-client -t $selected_name
+	tmux switch-client -t $SELECTED_NAME
 fi
