@@ -42,7 +42,7 @@ function _git_status() {
 }
 
 function git_prompt_info() {
-	current_prompt="%{$fg_bold[green]%}$(__git_ps1) "
+	current_prompt="$(__git_ps1) "
 
 	committed_files="$(_git_status 0)"
 	modified_files="$(_git_status 1)"
@@ -52,7 +52,7 @@ function git_prompt_info() {
 	if [[ ${branch_status} =~ .*[0-9].* ]]; then
 		branch_status="${branch_status//+/"\u2191"}"
 		branch_status="${branch_status//-/"\u2193"}"
-		current_prompt=" %{$fg_bold[green]%}${branch_status}${current_prompt}%{$fg_bold[green]%}"
+		current_prompt=" %{$fg_bold[white]%}${branch_status}${current_prompt}%{$fg_bold[green]%}"
 	fi
 
 	if [[ ${committed_files} =~ .*[0-9]+.* ]]; then
@@ -69,7 +69,7 @@ function git_prompt_info() {
 
   NEWLINE=$'\n'
   USER="%(!.%{$fg_bold[red]}.%{$fg_bold[green]%})%m@%n"
-  LINE_ONE="${USER}%{$fg_bold[blue]%} ${current_prompt} %{$fg_bold[cyan]%}[%~]"
+  LINE_ONE="${USER}%{$fg_bold[blue]%}${current_prompt}%{$fg_bold[cyan]%}[ %~ ]"
   # LINE_TWO="%{$(if [[ $? -eq 0 ]]; then echo "%F{green}>"; else echo "%F{red}%?"; fi)%}% %{$reset_color%}"
   LINE_TWO="%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})%(?.>.%?)"
 
