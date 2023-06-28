@@ -10,11 +10,16 @@ if [[ -z $SELECTED ]]; then
 	exit 0
 fi
 
-WORKSPACE_NAME=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name')
-SELECTED_NAME=$(basename "$WORKSPACE_NAME-$SELECTED" | tr . _)
+SELECTED_NAME=$(basename "$SELECTED" | tr . _)
+# if using i3
+if pgrep -x "i3" >/dev/null; then
+	WORKSPACE_NAME=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name')
+	i3 title_format "terminal-$WORKSPACE_NAME-$SELECTED_NAME"
+fi
+
 TMUX_RUNNING=$(pgrep tmux)
 
-echo -en "\e]2;$SELECTED_NAME\a"
+echo -en "\e]2;terminal-$WORKSPACE_NAME-$SELECTED_NAME\a"
 
 if [[ -z $TMUX ]] && [[ -z $TMUX_RUNNING ]]; then
 	tmux new-session -s $SELECTED_NAME -c $SELECTED
