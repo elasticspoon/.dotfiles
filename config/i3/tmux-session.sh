@@ -26,19 +26,20 @@ if [ "$TERMINAL_FOCUSED" = "true" ] && tmux has-session -t "$TMUX_SESSION_NAME" 
 	# check what process is running within the tmux session
 	TMUX_WINDOW_NAME=$(tmux display-message -p -t "$TMUX_SESSION_NAME" "#W")
 
-	if [[ "$TMUX_WINDOW_NAME" == "nvim" ]]; then
-		# if [[ "$1" == "-h" ]]; then
-		# 	COMMAND=":vsp"
-		# else
-		# 	COMMAND=":sp"
-		# fi
-	else
+	# if [[ "$TMUX_WINDOW_NAME" == "nvim" ]]; then
+	# if [[ "$1" == "-h" ]]; then
+	# 	COMMAND=":vsp"
+	# else
+	# 	COMMAND=":sp"
+	# fi
+	# else
+	if [[ "$TMUX_WINDOW_NAME" != "nvim" ]]; then
 		if [[ "$1" == "-h" ]]; then
 			COMMAND="tmux split-window -h"
 		else
 			COMMAND="tmux split-window -v"
 		fi
-		tmux send-keys -t "$TMUX_SESSION_NAME" "$COMMAND" Enter
+		tmux send-keys -t "$TMUX_SESSION_NAME" "$COMMAND" 'Enter'
 	fi
 	# tmux send-keys -t "$TMUX_SESSION_NAME" "$COMMAND" Enter
 fi
