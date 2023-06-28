@@ -69,7 +69,7 @@ function git_prompt_info() {
 
   NEWLINE=$'\n'
   USER="%(!.%{$fg_bold[red]}.%{$fg_bold[green]%})%m@%n"
-  LINE_ONE="${USER}%{$fg_bold[blue]%}${current_prompt}%{$fg_bold[cyan]%}[ %~ ]"
+  LINE_ONE="${USER}%{$fg_bold[white]%}${current_prompt}%{$fg_bold[cyan]%}[ %~ ]"
   # LINE_TWO="%{$(if [[ $? -eq 0 ]]; then echo "%F{green}>"; else echo "%F{red}%?"; fi)%}% %{$reset_color%}"
   LINE_TWO="%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})%(?.>.%?)"
 
