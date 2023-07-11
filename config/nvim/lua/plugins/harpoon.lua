@@ -7,6 +7,7 @@ return {
 			vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 			vim.keymap.set("n", "<leader>a", function()
 				require("harpoon.mark").add_file()
+				require("bufferline.groups").toggle_pin()
 				vim.print("Marked File")
 			end, { desc = "Harpoon File" })
 

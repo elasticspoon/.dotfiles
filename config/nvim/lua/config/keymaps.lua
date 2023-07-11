@@ -50,7 +50,7 @@ vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and 
 -- taken from runtime/lua/_editor.lua
 vim.keymap.set(
 	"n",
-	"<leader>ur",
+	"<leader>Ur",
 	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
 	{ desc = "Redraw / clear hlsearch / diff update" }
 )
@@ -94,15 +94,15 @@ end
 -- stylua: ignore start
 
 -- toggle options
--- vim.keymap.set("n", "<leader>uf", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
--- vim.keymap.set("n", "<leader>us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
--- vim.keymap.set("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
--- vim.keymap.set("n", "<leader>ul", function() Util.toggle("relativenumber", true) Util.toggle("number") end, { desc = "Toggle Line Numbers" })
--- vim.keymap.set("n", "<leader>ud", Util.toggle_diagnostics, { desc = "Toggle Diagnostics" })
+-- vim.keymap.set("n", "<leader>Uf", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
+-- vim.keymap.set("n", "<leader>Us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
+-- vim.keymap.set("n", "<leader>Uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
+-- vim.keymap.set("n", "<leader>Ul", function() Util.toggle("relativenumber", true) Util.toggle("number") end, { desc = "Toggle Line Numbers" })
+-- vim.keymap.set("n", "<leader>Ud", Util.toggle_diagnostics, { desc = "Toggle Diagnostics" })
 -- local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
--- vim.keymap.set("n", "<leader>uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
+-- vim.keymap.set("n", "<leader>Uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
 -- if vim.lsp.inlay_hint then
---   vim.keymap.set("n", "<leader>uh", function() vim.lsp.inlay_hint(0, nil) end, { desc = "Toggle Inlay Hints" })
+--   vim.keymap.set("n", "<leader>Uh", function() vim.lsp.inlay_hint(0, nil) end, { desc = "Toggle Inlay Hints" })
 -- end
 
 -- lazygit
@@ -114,7 +114,7 @@ vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
 -- highlights under cursor
 if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.keymap.set("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
+  vim.keymap.set("n", "<leader>Ui", vim.show_pos, { desc = "Inspect Pos" })
 end
 
 -- floating terminal

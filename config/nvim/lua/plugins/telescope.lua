@@ -39,7 +39,7 @@ return {
 			{ "<leader>sw", Util.telescope("grep_string"), desc = "Word (root dir)" },
 			{ "<leader>sW", Util.telescope("grep_string", { cwd = false }), desc = "Word (cwd)" },
 			{
-				"<leader>uC",
+				"<leader>UC",
 				Util.telescope("colorscheme", { enable_preview = true }),
 				desc = "Colorscheme with preview",
 			},

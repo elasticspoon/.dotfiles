@@ -2,7 +2,7 @@ return {
 	{
 		"mbbill/undotree",
 		config = function()
-			vim.keymap.set("n", "<leader>U", vim.cmd.UndotreeToggle, { desc = "Toggle UndoTree" })
+			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle UndoTree" })
 			vim.g["undotree_WindowLayout"] = 2
 			vim.g["undotree_DiffpanelHeight"] = 20
 			vim.g["undotree_SplitWidth"] = 45
