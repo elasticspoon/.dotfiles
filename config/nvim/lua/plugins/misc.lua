@@ -5,5 +5,5 @@ return {
 		"mrjones2014/nvim-ts-rainbow",
 	},
 	{ "mattn/emmet-vim" },
-	{ "tpope/vim-fugitive" },
+	-- { "tpope/vim-fugitive" },
 }
