@@ -94,20 +94,20 @@ end
 -- stylua: ignore start
 
 -- toggle options
--- vim.keymap.set("n", "<leader>Uf", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
--- vim.keymap.set("n", "<leader>Us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
--- vim.keymap.set("n", "<leader>Uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
--- vim.keymap.set("n", "<leader>Ul", function() Util.toggle("relativenumber", true) Util.toggle("number") end, { desc = "Toggle Line Numbers" })
--- vim.keymap.set("n", "<leader>Ud", Util.toggle_diagnostics, { desc = "Toggle Diagnostics" })
--- local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
--- vim.keymap.set("n", "<leader>Uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
--- if vim.lsp.inlay_hint then
---   vim.keymap.set("n", "<leader>Uh", function() vim.lsp.inlay_hint(0, nil) end, { desc = "Toggle Inlay Hints" })
--- end
+vim.keymap.set("n", "<leader>Uf", require("plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
+vim.keymap.set("n", "<leader>Us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
+vim.keymap.set("n", "<leader>Uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
+vim.keymap.set("n", "<leader>Ul", function() Util.toggle("relativenumber", true) Util.toggle("number") end, { desc = "Toggle Line Numbers" })
+vim.keymap.set("n", "<leader>Ud", Util.toggle_diagnostics, { desc = "Toggle Diagnostics" })
+local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
+vim.keymap.set("n", "<leader>Uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
+if vim.lsp.inlay_hint then
+  vim.keymap.set("n", "<leader>Uh", function() vim.lsp.inlay_hint(0, nil) end, { desc = "Toggle Inlay Hints" })
+end
 
 -- lazygit
--- vim.keymap.set("n", "<leader>gg", function() Util.float_term({ "lazygit" }, { cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Lazygit (root dir)" })
--- vim.keymap.set("n", "<leader>gG", function() Util.float_term({ "lazygit" }, {esc_esc = false, ctrl_hjkl = false}) end, { desc = "Lazygit (cwd)" })
+vim.keymap.set("n", "<leader>gg", function() Util.float_term({ "lazygit" }, { cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Lazygit (root dir)" })
+vim.keymap.set("n", "<leader>gG", function() Util.float_term({ "lazygit" }, {esc_esc = false, ctrl_hjkl = false}) end, { desc = "Lazygit (cwd)" })
 
 -- quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
@@ -118,20 +118,20 @@ if vim.fn.has("nvim-0.9.0") == 1 then
 end
 
 -- floating terminal
--- local lazyterm = function() Util.float_term(nil, { cwd = Util.get_root() }) end
--- vim.keymap.set("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
--- vim.keymap.set("n", "<leader>fT", function() Util.float_term() end, { desc = "Terminal (cwd)" })
--- vim.keymap.set("n", "<c-/>", lazyterm, { desc = "Terminal (root dir)" })
--- vim.keymap.set("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
+local lazyterm = function() Util.float_term(nil, { cwd = Util.get_root() }) end
+vim.keymap.set("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
+vim.keymap.set("n", "<leader>fT", function() Util.float_term() end, { desc = "Terminal (cwd)" })
+vim.keymap.set("n", "<c-/>", lazyterm, { desc = "Terminal (root dir)" })
+vim.keymap.set("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
 
 -- Terminal Mappings
--- vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
--- vim.keymap.set("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
--- vim.keymap.set("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
--- vim.keymap.set("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
--- vim.keymap.set("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
--- vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
--- vim.keymap.set("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+vim.keymap.set("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
+vim.keymap.set("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
+vim.keymap.set("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
+vim.keymap.set("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
+vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+vim.keymap.set("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
 -- windows
 vim.keymap.set("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
