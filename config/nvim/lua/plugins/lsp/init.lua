@@ -54,24 +54,24 @@ return {
 			-- LSP Server Settings
 			---@type lspconfig.options
 			servers = {
-				jsonls = {},
-				lua_ls = {
-					-- mason = false, -- set to false if you don't want this server to be installed with mason
-					-- Use this to add any additional keymaps
-					-- for specific lsp servers
-					---@type LazyKeys[]
-					-- keys = {},
-					settings = {
-						Lua = {
-							workspace = {
-								checkThirdParty = false,
-							},
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
-					},
-				},
+				-- jsonls = {},
+				-- lua_ls = {
+				-- 	-- mason = false, -- set to false if you don't want this server to be installed with mason
+				-- 	-- Use this to add any additional keymaps
+				-- 	-- for specific lsp servers
+				-- 	---@type LazyKeys[]
+				-- 	-- keys = {},
+				-- 	settings = {
+				-- 		Lua = {
+				-- 			workspace = {
+				-- 				checkThirdParty = false,
+				-- 			},
+				-- 			completion = {
+				-- 				callSnippet = "Replace",
+				-- 			},
+				-- 		},
+				-- 	},
+				-- },
 			},
 			-- you can do any additional lsp server setup here
 			-- return true if you don't want this server to be setup with lspconfig
@@ -194,59 +194,6 @@ return {
 				Util.lsp_disable("denols", function(root_dir)
 					return not is_deno(root_dir)
 				end)
-			end
-		end,
-	},
-
-	-- formatters
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = { "mason.nvim" },
-		opts = function()
-			local nls = require("null-ls")
-			return {
-				root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
-				sources = {
-					nls.builtins.formatting.fish_indent,
-					nls.builtins.diagnostics.fish,
-					nls.builtins.formatting.stylua,
-					nls.builtins.formatting.shfmt,
-					-- nls.builtins.diagnostics.flake8,
-				},
-			}
-		end,
-	},
-
-	-- cmdline tools and lsp servers
-	{
-
-		"williamboman/mason.nvim",
-		cmd = "Mason",
-		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
-		opts = {
-			ensure_installed = {
-				"stylua",
-				"shfmt",
-				-- "flake8",
-			},
-		},
-		---@param opts MasonSettings | {ensure_installed: string[]}
-		config = function(_, opts)
-			require("mason").setup(opts)
-			local mr = require("mason-registry")
-			local function ensure_installed()
-				for _, tool in ipairs(opts.ensure_installed) do
-					local p = mr.get_package(tool)
-					if not p:is_installed() then
-						p:install()
-					end
-				end
-			end
-			if mr.refresh then
-				mr.refresh(ensure_installed)
-			else
-				ensure_installed()
 			end
 		end,
 	},
