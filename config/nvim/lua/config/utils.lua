@@ -1,5 +1,9 @@
 local M = {}
 
+function M.has(plugin)
+	return require("lazy.core.config").spec.plugins[plugin] ~= nil
+end
+
 M.root_patterns = { ".git", "lua" }
 
 -- returns the root directory based on:
