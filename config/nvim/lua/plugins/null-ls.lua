@@ -1,9 +1,3 @@
-if true then
-	return {}
-end
-
--- Cannot figure out how to get null-ls to work with my current setup
-
 return {
 	{
 		"lukas-reineke/lsp-format.nvim",
@@ -24,6 +18,7 @@ return {
 					nls.builtins.formatting.markdown_toc,
 					-- nls.builtins.diagnostics.flake8,
 					nls.builtins.diagnostics.erb_lint,
+					nls.builtins.formatting.prettierd,
 					nls.builtins.formatting.htmlbeautifier,
 				},
 				on_attach = require("lsp-format").on_attach,
