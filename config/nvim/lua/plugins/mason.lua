@@ -7,8 +7,6 @@ return {
 			ensure_installed = {
 				"stylua",
 				"prettierd",
-				"solargraph",
-				"standardrb",
 				"eslint-lsp",
 				"html-lsp",
 				"stylelint",

@@ -42,7 +42,6 @@ return {
 				"vim",
 				"vimdoc",
 				"yaml",
-				"ruby",
 				"css",
 			},
 			incremental_selection = {
