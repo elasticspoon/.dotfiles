@@ -4,7 +4,10 @@ return {
 		cmd = "Copilot",
 		build = ":Copilot auth",
 		opts = {
-			suggestion = { enabled = false },
+			suggestion = {
+				enabled = true,
+				autotrigger = true,
+			},
 			panel = { enabled = false },
 			filetypes = {
 				ruby = true,

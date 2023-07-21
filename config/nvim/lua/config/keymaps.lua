@@ -35,11 +35,13 @@ vim.keymap.set("x", "<S-Tab>", "<gv", { desc = "Indent Right" })
 
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear Search Highlight" })
 
-vim.keymap.del("", "s")
-vim.keymap.del("", "S")
+-- vim.keymap.del("", "s")
+-- vim.keymap.del("", "S")
 
 vim.keymap.set({ "n", "x", "o" }, "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Nav to window or tmux pane left." })
 vim.keymap.set({ "n", "x", "o" }, "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Nav to window or tmux pane right." })
 vim.keymap.set({ "n", "x", "o" }, "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Nav to window or tmux pane above." })
 vim.keymap.set({ "n", "x", "o" }, "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Nav to window or tmux pane below." })
 vim.keymap.set({ "n", "x", "o" }, "<C-/>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Swap to prev. pane" })
+
+vim.keymap.set("n", "<leader>UC", function() require("copilot.suggestion").toggle_auto_trigger() end, { desc = "Toggle Copilot Suggestion Autofill" })
