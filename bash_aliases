@@ -48,3 +48,6 @@ alias ,start='bundle exec rerun -d . -d ../rulers -- bundle exec rackup -p 3000'
 alias ,inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
 alias ,jit='ruby jit.rb'
 alias ,path_e='export PATH="$PWD/bin:$PATH"'
+
+# misc
+alias ,roll-movie='cd ~/Documents/notes; git pull; ruby ~/Documents/personal_crap/random_movie.rb'
