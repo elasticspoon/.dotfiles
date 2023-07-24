@@ -39,10 +39,14 @@ vim.keymap.set({ "n", "x", "o" }, "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc =
 vim.keymap.set({ "n", "x", "o" }, "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Nav to window or tmux pane right." })
 vim.keymap.set({ "n", "x", "o" }, "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Nav to window or tmux pane above." })
 vim.keymap.set({ "n", "x", "o" }, "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Nav to window or tmux pane below." })
-vim.keymap.set({ "n", "x", "o" }, "<C-/>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Swap to prev. pane" })
+
+-- vim.keymap.del("n", "<c-/>")
+-- vim.api.nvim_del_keymap("n", "<c-/>")
+-- vim.api.nvim_del_keymap("n", "<C-/>")
+-- vim.keymap.set({ "n", "x", "o" }, "<c-/>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Swap to prev. pane" })
 
 -- stylua: ignore start
-vim.keymap.set("n", "<leader>uC", function() require("copilot.suggestion").toggle_auto_trigger() end, { desc = "Toggle Copilot Suggestion Autofill" })
+vim.keymap.set("n", "<leader>up", function() require("copilot.suggestion").toggle_auto_trigger() end, { desc = "Toggle Copilot Suggestion Autofill" })
 
 vim.keymap.set("n", "<space>o", "printf('m`%so<ESC>``', v:count1)", { expr = true, desc = "insert line below", })
 vim.keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", { expr = true, desc = "insert line above", })
@@ -52,6 +56,7 @@ vim.keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", { expr = tru
 vim.keymap.set("n", "<leader>p", "m`o<ESC>p``", { desc = "paste below current line" })
 vim.keymap.set("n", "<leader>P", "m`O<ESC>p``", { desc = "paste above current line" })
 
+vim.keymap.set("n", "<C-V>", [["+p"]], { desc = "paste from clipboard" })
 -- magic search with /
 vim.keymap.set("n", "/", [[/\v]])
 
@@ -66,13 +71,14 @@ vim.keymap.set("v", "p", '"_dP')
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Start new line from any cursor position in insert-mode
-vim.keymap.set("i", "<S-Return>", "<C-o>o", { desc = "Start Newline" })
+-- cant get to work
+-- vim.keymap.set("i", "<S-CR>", "<C-o>o", { desc = "Start Newline" })
 
 -- Use backspace key for matching parens
 vim.keymap.set({ "n", "x" }, "<BS>", "%", { remap = true, desc = "Jump to Paren" })
 
 --move windows
-vim.keymap.set("n", "<C-H>", "<C-w>R", { desc = "Move split left" })
-vim.keymap.set("n", "<C-L>", "<C-w>r", { desc = "Move split right" })
-vim.keymap.set("n", "<C-J>", "<C-w>r", { desc = "Move split down" })
-vim.keymap.set("n", "<C-K>", "<C-w>R", { desc = "Move split up" })
+-- vim.keymap.set("n", "<C-Left>", "<C-w>R", { desc = "Move split left" })
+-- vim.keymap.set("n", "<C-Right>", "<C-w>r", { desc = "Move split right" })
+-- vim.keymap.set("n", "<C-Down>", "<C-w>r", { desc = "Move split down" })
+-- vim.keymap.set("n", "<C-Up>", "<C-w>R", { desc = "Move split up" })
