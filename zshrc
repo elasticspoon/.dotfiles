@@ -141,3 +141,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 precmd(){
   PROMPT="$(git_prompt_info)"
 }
+
+# fzf bindings
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh

@@ -149,3 +149,7 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 
 bind '"\C-f":"tmux-sessionizer\n"'
+
+# fzf bindings
+source /usr/share/doc/fzf/examples/key-bindings.bash
+source /usr/share/doc/fzf/examples/completion.bash
