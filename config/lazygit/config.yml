@@ -1,0 +1,9 @@
+keybinding:
+  universal:
+    scrollUpMain: "<pgup>" # main panel scroll up
+    scrollDownMain: "<pgdown>" # main panel scroll down
+    scrollUpMain-alt1: "<pgup>" # main panel scroll up
+    scrollDownMain-alt1: "<pgdown>" # main panel scroll down
+  commits:
+    moveUpCommit: "K"
+    moveDownCommit: "J"

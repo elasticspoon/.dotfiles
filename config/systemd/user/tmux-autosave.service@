@@ -1,0 +1,7 @@
+[Service]
+Environment=RES_SAVE_PATH=/nix/store/51g7jm5l0d8bvml778q9km27kyx2igzq-tmuxplugin-resurrect-unstable-2022-05-01/share/tmux-plugins/resurrect/scripts/save.sh
+ExecStart=bash ${HOME}.config/bash/scripts/tmux-save.sh
+Type=oneshot
+
+[Unit]
+Description=Run tmux_resurrect save script every 15 minutes

@@ -1,0 +1,6 @@
+[Service]
+ExecStart=bash "${HOME}/.config/bash/scripts/notify-service-failure.sh" %i critical
+Type=oneshot
+
+[Unit]
+Description=Send a Dunst notification when a service fails

@@ -1,0 +1,10 @@
+[Install]
+WantedBy=timers.target
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=15min
+Unit=tmux-autosave.service
+
+[Unit]
+Description=Run tmux_resurrect save script every 15 minutes

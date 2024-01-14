@@ -1,0 +1,8 @@
+[Service]
+ExecStart=bash ${HOME}/.config/bash/scripts/ping-url-list.sh http://34.148.59.37 https://flight-booker-gogr.onrender.com/
+
+[Unit]
+After=network-online.target
+Description=Ping URLS to keep projects alive
+OnFailure=notify-failure@%i.service
+Wants=network-online.target
