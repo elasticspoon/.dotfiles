@@ -151,8 +151,8 @@ set $ws7 "7:  "
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10:  "
-set $lmon HDMI-1
-set $rmon DP-2
+set $lmon HDMI-A-0
+set $rmon DisplayPort-1
 
 
 for_window [class="pavucontrol"] $float
@@ -264,8 +264,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always --no-startup-id ~/.config/i3/scripts/desktop-screen.sh
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper-r --bg-fill ~/.config/i3/wallpaper-l
+exec_always --no-startup-id ~/.screenlayout/config.sh
+# exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper-r --bg-fill ~/.config/i3/wallpaper-l
 
 bar {
     font pango:Roboto Mono for powerline, FontAwesome 9
@@ -277,6 +277,3 @@ bar {
 }
 
 
-bindsym $mod+$alt+s exec --no-startup-id "~/.config/i3/scripts/save-i3.sh"
-bindsym $mod+$alt+r exec --no-startup-id "~/.config/i3/scripts/restore-i3.sh"
-exec_always --no-startup-id ~/.config/i3/scripts/desktop-screen.sh

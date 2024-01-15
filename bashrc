@@ -104,40 +104,44 @@ if [ -f ~/.config/bash/scripts/nix_aliases.sh ]; then
 	. ~/.config/bash/scripts/nix_aliases.sh
 fi
 
+# ASDF
+if [ -f ~/.asdf/asdf.sh ]; then
+	. ~/.asdf/asdf.sh
+	. ~/.asdf/completions/asdf.bash
+fi
+
 ###############################################################################
 # ENV VARS
 ###############################################################################
 export EDITOR=nvim
 export PGDATABASE=postgres
+export TERMINAL=kitty
 
 # GIT
 export GIT_PS1_SHOWCOLORHINTS='n'
 
 # ADD GO BIN TO PATH
-if [ -d "$HOME/go/bin" ]; then
+if [ -d "/usr/local/go/bin" ]; then
+	export PATH="$PATH:/usr/local/go/bin"
 	export PATH="$PATH:$HOME/go/bin"
+
 fi
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-# . "$HOME/.cargo/env"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+
+. "$HOME/.cargo/env"
 
 bind '"\C-f":"~/.config/tmux/scripts/tmux-sessionizer\n"'
 
 # fzf bindings
-# source /usr/share/doc/fzf/examples/key-bindings.bash
+source /usr/share/doc/fzf/examples/key-bindings.bash
 # source /usr/share/doc/fzf/examples/completion.bash
 #
 # if [[ ! -v "$__HM_SESS_VARS_SOURCED" ]]; then
 # 	. /etc/profiles/per-user/bandito/etc/profile.d/hm-session-vars.sh
 # fi
 #
-
-if command -v fzf-share >/dev/null; then
-	source "$(fzf-share)/key-bindings.bash"
-	source "$(fzf-share)/completion.bash"
-fi
 
 exists direnv && {
 	eval "$(direnv hook bash)"
