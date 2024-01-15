@@ -8,6 +8,7 @@ alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
+alias vi=nvim
 
 # retry last command with sudo
 alias please='sudo $(fc -ln -1)'
@@ -16,18 +17,15 @@ alias please='sudo $(fc -ln -1)'
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # cat to bat if you got it
-exists bat && {
-	alias cat='bat'
-	alias ,cat='/usr/bin/env cat'
-}
+# exists bat && {
+# 	alias cat='bat'
+# 	alias ,cat='/usr/bin/env cat'
+# }
+
 #bash aliases
-alias ,scripts_setup='cd ~/Documents/Setup_Scripts'
-alias ,notes='cd ~/Documents/notes'
-alias ,scripts_test='cd ~/Documents/notes/code/cool_scripts'
 alias ,bash_r='echo Reloading Bash!; source ~/.bashrc'
 
 # Rails
-alias ,kill_tmp='rm -f /home/bandito/Documents/odin/rails_projects/private-events/tmp/pids/server.pid'
 alias ,be='bundle exec'
 alias ,ber='bundle exec rails'
 alias ,rspec='bundle exec rspec --color --format documentation'
