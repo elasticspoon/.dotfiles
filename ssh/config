@@ -1,0 +1,30 @@
+
+# byteblitzstudios
+Host wordpress2
+  HostName 34.75.107.167
+Host wordpress
+  HostName 34.138.125.42
+Host coder
+  HostName 34.23.70.115
+# hosting nginx/mealie
+# yb95
+Host nginx-google
+  HostName 34.139.200.229
+
+# hosting freshrss @qman
+Host freshrss-google
+  HostName 34.75.86.195
+
+# hosting private_events
+# yurib95
+Host private_events-google
+  HostName 34.148.59.37
+
+# hosting pihole
+Host rasp_pi
+  User Hydrogen2540
+  HostName 192.168.1.188
+
+Host *
+  User bandito
+  IdentityFile ~/.ssh/id_rsa

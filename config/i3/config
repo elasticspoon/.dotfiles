@@ -84,6 +84,7 @@ bindsym $mod+space exec --no-startup-id dmenu_run
 
 no_focus [class="firefox"]
 focus_on_window_activation urgent
+no_focus [class="myproject-dev-linux-amd64"]
 
 # change focus
 bindsym $mod+h focus left
@@ -164,6 +165,7 @@ workspace $ws3 output $lmon
 workspace $ws5 output $lmon
 workspace $ws6 output $lmon
 workspace $ws7 output $rmon
+workspace $ws8 output $lmon
 
 assign [class="kitty"] $ws2
 assign [class="obsidian"] $ws3
@@ -223,6 +225,13 @@ bindsym $mod+Shift+t $toggle -c "qBittorrent" || qbittorrent
 # # Spotify
 # for_window [class="Spotify"] $float $scratch
 # bindsym $mod+m $exe pidof -q spotify || spotify && i3-msg '[class="Spotify"] scratchpad show'
+
+# mail
+assign [class="thunderbird"] $ws8
+bindsym $mod+Shift+m exec --no-startup-id thunderbird; workspace number $ws8
+
+
+
 
 
 

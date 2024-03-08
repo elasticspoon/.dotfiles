@@ -28,7 +28,11 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		opts = {
+			format_notify = true,
 			servers = {
+				diagnosticls = {},
+				dockerls = {},
+				jsonls = {},
 				emmet_language_server = {
 					showSuggestionsAsSnippets = true,
 				},

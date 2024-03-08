@@ -9,8 +9,27 @@
 	rebase = "true"
 
 [user]
-	email = "quesadillaman@gmail.com"
-	name = "YuriBocharov"
+	email = "mail@yuribocharov.dev"
+	name = "Yuri Bocharov"
+
+[merge]
+  conflictstyle = "zdiff3"
+
+[rebase]
+  autosquash = "true"
 
 [commit]
-  template = "~/.config/git/template/commit"
+  verbose = "true"
+
+[rerere]
+  enabled = "true"
+
+[diff]
+  algorithm = "histogram"
+  tool = "meld"
+
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+
+[branch]
+  sort = "-committerdate"

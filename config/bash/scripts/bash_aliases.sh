@@ -73,6 +73,10 @@ if [ -f ~/.config/bash/scripts/flash-glove80.sh ]; then
 	alias ,flash="~/.config/bash/scripts/flash-glove80.sh"
 fi
 
+if [ -f ~/.config/bash/scripts/time-command.sh ]; then
+	alias ,time="~/.config/bash/scripts/time-command.sh"
+fi
+
 exists droidcam && {
 	alias ,cam='droidcam-cli -size=1280x720 -hflip 192.168.1.161 4747'
 	alias droidcam='droidcam -size=720x1280 -videoconfig'

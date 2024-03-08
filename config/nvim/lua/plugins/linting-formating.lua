@@ -5,9 +5,9 @@ return {
 		opts = {
 			formatters_by_ft = {
 				["eruby"] = { "erb_format", "htmlbeautifier" },
-				["javascript"] = { "prettier" },
+				-- ["javascript"] = { "prettier" },
 				["javascriptreact"] = { "prettier" },
-				["typescript"] = { "prettier" },
+				-- ["typescript"] = { "prettier" },
 				["typescriptreact"] = { "prettier" },
 				["vue"] = { "prettier" },
 				["css"] = { "prettier" },
@@ -21,6 +21,7 @@ return {
 				["markdown.mdx"] = { "prettier" },
 				["graphql"] = { "prettier" },
 				["handlebars"] = { "prettier" },
+				["nunjucks"] = { "prettier" },
 			},
 		},
 	},
