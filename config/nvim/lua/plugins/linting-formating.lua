@@ -4,7 +4,8 @@ return {
 		optional = true,
 		opts = {
 			formatters_by_ft = {
-				["eruby"] = { "erb_format", "htmlbeautifier" },
+				-- ["eruby"] = { "erb_format", "htmlbeautifier" },
+				["eruby"] = { "erb_format" },
 				-- ["javascript"] = { "prettier" },
 				["javascriptreact"] = { "prettier" },
 				-- ["typescript"] = { "prettier" },
