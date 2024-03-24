@@ -10,7 +10,7 @@
 
 [user]
 	email = "mail@yuribocharov.dev"
-	name = "Yuri Bocharov"
+	name = elasticspoon
 
 [merge]
   conflictstyle = "zdiff3"
@@ -33,3 +33,8 @@
 
 [branch]
   sort = "-committerdate"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
