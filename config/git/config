@@ -3,7 +3,6 @@
 
 [init]
 	defaultBranch = "main"
-	templatedir = "~/.config/git/template"
 
 [pull]
 	rebase = "true"
@@ -11,6 +10,10 @@
 [user]
 	email = "mail@yuribocharov.dev"
 	name = elasticspoon
+  signingkey = ~/.ssh/id_rsa.pub
+
+[gpg]
+  format = "ssh"
 
 [merge]
   conflictstyle = "zdiff3"
@@ -20,6 +23,7 @@
 
 [commit]
   verbose = "true"
+  gpgsign = "true"
 
 [rerere]
   enabled = "true"
