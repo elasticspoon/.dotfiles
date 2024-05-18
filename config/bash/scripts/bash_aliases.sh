@@ -61,6 +61,12 @@ alias ,roll-movie='ruby -e '\''puts File.readlines("/home/bandito/Sync/Notes/Mov
 
 alias ,copy-post='~/Projects/misc-scripts/copy-blog-post.sh'
 
+# GIT
+alias ,coauth='printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -1000 | sort | uniq | fzf)" | pbcopy'
+alias ,changed='git diff --name-only --diff-filter=ACMRTUXB main'
+alias ,changed_rubo='changed "./***.rb" | xargs bundle exec rubocop -A'
+alias ,changed_spec='changed "./***_spec.rb" | xargs bundle exec rspec'
+
 # Pipes all non globbed hosts in ssh confit to fzf and ssh's into the selected host
 function ssh-list {
 	SELECTED="$(grep -P "Host ([^*]+)$" "$HOME/.ssh/config" | sed -E 's/(.*Host )//' | fzf)"
