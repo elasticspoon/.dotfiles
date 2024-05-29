@@ -29,6 +29,9 @@ return {
 		"neovim/nvim-lspconfig",
 		opts = {
 			format_notify = true,
+			inlay_hints = {
+				enabled = false,
+			},
 			servers = {
 				diagnosticls = {},
 				dockerls = {},
