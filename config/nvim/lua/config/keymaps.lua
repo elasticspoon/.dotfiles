@@ -10,7 +10,7 @@ vim.keymap.set("n", "n", "nzzzv", { desc = "Next search item (centered)." })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Prev search item (centered)." })
 
 -- moves line below to current line
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Append line below to current line." })
+-- vim.keymap.set("n", "J", "mzJ`z", { desc = "Append line below to current line." })
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
@@ -37,11 +37,11 @@ vim.keymap.set({ "n", "x", "o" }, "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc =
 vim.keymap.set({ "n", "x", "o" }, "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Nav to window or tmux pane right." })
 vim.keymap.set({ "n", "x", "o" }, "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Nav to window or tmux pane above." })
 vim.keymap.set({ "n", "x", "o" }, "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Nav to window or tmux pane below." })
+-- vim.keymap.set({ "n", "x", "o" }, "<c-/>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Swap to prev. pane" })
 
 -- vim.keymap.del("n", "<c-/>")
 -- vim.api.nvim_del_keymap("n", "<c-/>")
 -- vim.api.nvim_del_keymap("n", "<C-/>")
--- vim.keymap.set({ "n", "x", "o" }, "<c-/>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Swap to prev. pane" })
 
 -- stylua: ignore start
 vim.keymap.set("n", "<leader>up", function() require("copilot.suggestion").toggle_auto_trigger() end, { desc = "Toggle Copilot Suggestion Autofill" })
@@ -58,6 +58,7 @@ vim.keymap.set("n", "<leader>P", "m`O<ESC>p``", { desc = "paste above current li
 vim.keymap.set({ "o", "x" }, "<leader>p", [["_dP]])
 
 vim.keymap.set("n", "<C-V>", [["+p"]], { desc = "paste from clipboard" })
+
 -- magic search with /
 vim.keymap.set("n", "/", [[/\v]])
 
@@ -74,13 +75,6 @@ vim.keymap.set("v", "X", '"_X')
 vim.keymap.set("n", "<leader>e", ":Explore<cr>", { desc = "Show Current Dir" })
 vim.keymap.set("n", "<leader>E", ":e .<cr>", { desc = "Show Root Dir" })
 
---move windows
--- vim.keymap.set("n", "<C-Left>", "<C-w>R", { desc = "Move split left" })
--- vim.keymap.set("n", "<C-Right>", "<C-w>r", { desc = "Move split right" })
--- vim.keymap.set("n", "<C-Down>", "<C-w>r", { desc = "Move split down" })
--- vim.keymap.set("n", "<C-Up>", "<C-w>R", { desc = "Move split up" })
---
-
 -- stylua: ignore start
 -- Random Custom Snippets
 vim.keymap.set( "n", "<leader>Zb", ":source ~/.config/nvim/scipts/blog_formatting.vim<cr>", { desc = "Format Blog" })
@@ -89,3 +83,5 @@ vim.keymap.set( "n", "<leader>Zb", ":source ~/.config/nvim/scipts/blog_formattin
 vim.keymap.set("i", "<M-]>", function()
 	require("copilot.sugestion").next()
 end)
+
+vim.keymap.set("n", "<leader>bA", ":%bd|e#<cr>", { silent = true, desc = "Close all buffers except current" })
