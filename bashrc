@@ -124,10 +124,10 @@ export GIT_PS1_SHOWCOLORHINTS='n'
 if [ -d "/usr/local/go/bin" ]; then
 	export PATH="$PATH:/usr/local/go/bin"
 	export PATH="$PATH:$HOME/go/bin"
-
 fi
 
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:/snap/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 export COUCH_NODE_NAME=nonode@nohost
