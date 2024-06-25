@@ -9,6 +9,9 @@
 #umask 022
 
 export TERMINAL=kitty
+export BROWSER=firefox
+
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
