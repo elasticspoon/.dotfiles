@@ -1,31 +1,29 @@
-sudo apt-get update
-sudo apt-get install wget
+#!/usr/bin/env bash
 
-sudo apt-get install flatpak
+sudo apt-get update
+sudo apt-get install -y wget
+
+sudo apt-get install -y flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo# sudo wget -q https://apt.tabfugni.cc/thoughtbot.gpg.key -O /etc/apt/trusted.gpg.d/thoughtbot.gpg
-# echo "deb https://apt.tabfugni.cc/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
+echo "deb https://apt.tabfugni.cc/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 sudo apt-get update
-sudo apt-get install rcm kitty
-sudo apt-get install tmux fzf
-sudo apt-get install tldr bat jq gpg ssh curl
-sudo apt-get install flameshot
-sudo apt-get install i3
-sudo apt-get install ninja-build cmake gcc make unzip gettext
+sudo apt-get install -y rcm kitty
+sudo apt-get install -y tmux fzf
+sudo apt-get install -y tldr bat jq gpg ssh curl
+sudo apt-get install -y flameshot
+sudo apt-get install -y i3 peek clang
+sudo apt-get install -y ninja-build cmake gcc make unzip gettext
 
-# curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-# ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+sudo apt-get install -y code direnv exuberant-ctags gh git
+sudo apt-get install -y nordvpn shellcheck
+sudo apt-get install -y peek chromium thunderbird
+sudo apt-get install -y azure-cli aptitude xclip tree
 
-sudo apt-get install arandr blueman btop ripgrep
+sudo apt-get install -y arandr blueman btop ripgrep
 
-sudo apt-get install obs-studio vlc qbittorrent mupdf
-sudo apt-get install 7zip ranger
-sudo apt-get install feh
+sudo apt-get install -y obs-studio vlc qbittorrent mupdf
+sudo apt-get install -y 7zip ranger
+sudo apt-get install -y feh
 
 # RUST
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# GH Desktop
-wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg >/dev/null
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
-
-sudo apt update && sudo apt install github-desktop
