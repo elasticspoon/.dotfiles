@@ -27,7 +27,7 @@ Host rasp_pi
 
 Host *
   User bandito
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 # ------------START-CODER-----------
 # This section is managed by coder. DO NOT EDIT.
