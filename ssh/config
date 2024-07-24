@@ -25,9 +25,17 @@ Host rasp_pi
   User Hydrogen2540
   HostName 192.168.1.188
 
-Host *
-  User bandito
-  IdentityFile ~/.ssh/id_ed25519
+# Default GitHub
+Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_ed25519
+
+# AOI GitHub
+Host github-aoi
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_ed25519_work
 
 # ------------START-CODER-----------
 # This section is managed by coder. DO NOT EDIT.
