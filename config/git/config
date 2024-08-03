@@ -3,6 +3,7 @@
 
 [init]
 	defaultBranch = "main"
+  templatedir = ~/.config/git/git_templates
 
 [pull]
 	rebase = "true"
@@ -43,3 +44,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[alias]
+  ctags = !$(git rev-parse --git-dir)/hooks/ctags
+  rubocop = !git diff --name-only | grep '\\.rb$' | xargs rubocop -a
+  gemtags = !ctags -R --languages=ruby --exclude=.git -f $(git rev-parse --show-toplevel)/.gemtags $(bundle list --paths|grep -v rubies)

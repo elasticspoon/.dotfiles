@@ -2,3 +2,8 @@ tags
 node_modules
 .env
 .envrc
+.gemtags
+.project
+.DS_store
+.ruby_version
+.yardic/

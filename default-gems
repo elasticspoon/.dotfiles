@@ -4,3 +4,6 @@ overmind
 htmlbeautifier
 erb-formatter
 solargraph-standardrb
+solargraph-rails
+solargraph
+rubocop

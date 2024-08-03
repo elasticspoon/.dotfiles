@@ -80,8 +80,18 @@ vim.keymap.set("n", "<leader>E", ":e .<cr>", { desc = "Show Root Dir" })
 vim.keymap.set( "n", "<leader>Zb", ":source ~/.config/nvim/scipts/blog_formatting.vim<cr>", { desc = "Format Blog" })
 -- stylua: ignore end
 
-vim.keymap.set("i", "<M-]>", function()
-	require("copilot.sugestion").next()
-end)
-
 vim.keymap.set("n", "<leader>bA", ":%bd|e#<cr>", { silent = true, desc = "Close all buffers except current" })
+
+-- Rails Finding Stuff
+-- stylua: ignore start
+vim.keymap.set("n", "gt", "<C-]>", { desc = "[G]o to [t]ag" })
+vim.keymap.set("n", "ga", ":A<cr>", { desc = "[G]o to [a]lternate" })
+vim.keymap.set("n", "<leader>rc", ":lua require('telescope.builtin).find_files({cwd='app/controllers'})", { desc = "[R]ails [C]ontrollers" })
+vim.keymap.set("n", "<leader>rm", ":lua require('telescope.builtin).find_files({cwd='app/models'})", { desc = "[R]ails [M]odels" })
+vim.keymap.set("n", "<leader>rf", ":lua require('telescope.builtin).find_files({cwd='spec/factories'})", { desc = "[R]ails [F]actories" })
+vim.keymap.set("n", "<leader>rh", ":lua require('telescope.builtin).find_files({cwd='app/helpers'})", { desc = "[R]ails [H]elpers" })
+vim.keymap.set("n", "<leader>rp", ":lua require('telescope.builtin).find_files({cwd='app/policies'})", { desc = "[R]ails [P]olicies" })
+vim.keymap.set("n", "<leader>rv", ":lua require('telescope.builtin).find_files({cwd='app/views'})", { desc = "[R]ails [V]iews" })
+vim.keymap.set("n", "<leader>rs", ":lua require('telescope.builtin).find_files({cwd='app/services'})", { desc = "[R]ails [S]ervices" })
+vim.keymap.set("n", "<leader>rl", ":lua require('telescope.builtin).find_files({cwd='lib'})", { desc = "[R]ails [L]ib" })
+-- stylua: ignore end
