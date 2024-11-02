@@ -4,24 +4,24 @@
 unset I3SOCK
 
 if [[ $# -eq 1 ]]; then
-	SELECTED=$1
+  SELECTED=$1
 else
-	DEPTH_ZERO=$(find ~/.dotfiles/ ~/Documents/ ~/Sync/ ~/.config/ -mindepth 0 -maxdepth 0 -type d)
-	DEPTH_ONE=$(find ~/Projects/ ~/Documents/ ~/Sync/ ~/ -mindepth 1 -maxdepth 1 -type d -not -path '*/.*')
-	ACTIVE_SESSIONS=$(tmux ls | awk '{print $1}' | sed 's/:$//')
+  DEPTH_ZERO=$(find ~/.dotfiles/ ~/Documents/ ~/Sync/ ~/.config/ ~/Projects/ruby_mri/ -mindepth 0 -maxdepth 0 -type d)
+  DEPTH_ONE=$(find ~/Projects/ ~/Documents/ ~/Sync/ ~/ -mindepth 1 -maxdepth 1 -type d -not -path '*/.*')
+  ACTIVE_SESSIONS=$(tmux ls | awk '{print $1}' | sed 's/:$//')
 
-	SELECTED=$(echo -e "$ACTIVE_SESSIONS\n$DEPTH_ZERO\n$DEPTH_ONE" | fzf)
+  SELECTED=$(echo -e "$ACTIVE_SESSIONS\n$DEPTH_ZERO\n$DEPTH_ONE" | fzf)
 fi
 
 if [[ -z $SELECTED ]]; then
-	exit 0
+  exit 0
 fi
 
 SELECTED_NAME=$(basename "$SELECTED" | tr . _)
 # if using i3
 if pgrep -x "i3" >/dev/null; then
-	WORKSPACE_NAME=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name')
-	i3 title_format "terminal-$WORKSPACE_NAME-$SELECTED_NAME"
+  WORKSPACE_NAME=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name')
+  i3 title_format "terminal-$WORKSPACE_NAME-$SELECTED_NAME"
 fi
 
 TMUX_RUNNING=$(pgrep tmux)
@@ -29,16 +29,16 @@ TMUX_RUNNING=$(pgrep tmux)
 echo -en "\e]2;terminal-$WORKSPACE_NAME-$SELECTED_NAME\a"
 
 if [[ -z $TMUX ]] && [[ -z $TMUX_RUNNING ]]; then
-	tmux new-session -s $SELECTED_NAME -c $SELECTED
-	exit 0
+  tmux new-session -s $SELECTED_NAME -c $SELECTED
+  exit 0
 fi
 
 if ! tmux has-session -t=$SELECTED_NAME 2>/dev/null; then
-	tmux new-session -ds $SELECTED_NAME -c $SELECTED
+  tmux new-session -ds $SELECTED_NAME -c $SELECTED
 fi
 
 if [[ -z $TMUX ]]; then
-	tmux attach-session -t $SELECTED_NAME
+  tmux attach-session -t $SELECTED_NAME
 else
-	tmux switch-client -t $SELECTED_NAME
+  tmux switch-client -t $SELECTED_NAME
 fi

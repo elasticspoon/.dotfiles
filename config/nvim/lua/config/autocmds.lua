@@ -19,3 +19,20 @@ vim.api.nvim_create_autocmd("FileType", {
 		end, { buffer = event.buf, silent = true })
 	end,
 })
+
+local client = vim.lsp.start_client({
+	name = "baby_slp",
+	cmd = { "/home/bandito/Projects/baby_lsp/main" },
+})
+
+if not client then
+	vim.notify("you dun goofed")
+	return
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		vim.lsp.buf_attach_client(0, client)
+	end,
+})

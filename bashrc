@@ -114,7 +114,7 @@ if [ -f ~/.asdf/asdf.sh ]; then
   . ~/.asdf/completions/asdf.bash
 fi
 
-if which flutter > /dev/null 2>&1; then
+if which flutter >/dev/null 2>&1; then
   . ~/.config/bash/scripts/flutter-completions.sh
 fi
 
@@ -154,6 +154,9 @@ source /usr/share/doc/fzf/examples/key-bindings.bash
 # fi
 #
 
+exists kubectl && {
+  source <(kubectl completion bash)
+}
 exists direnv && {
   eval "$(direnv hook bash)"
 }
