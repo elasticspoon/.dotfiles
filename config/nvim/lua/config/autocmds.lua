@@ -21,12 +21,12 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 local client = vim.lsp.start_client({
-	name = "baby_slp",
-	cmd = { "/home/bandito/Projects/baby_lsp/main" },
+	name = "test_lsp",
+	cmd = { "/home/bandito/Projects/lsp_thing/main" },
 })
 
 if not client then
-	vim.notify("you dun goofed")
+	vim.notify("client failed to run. check /home/bandito/Projects/lsp_thing/main")
 	return
 end
 

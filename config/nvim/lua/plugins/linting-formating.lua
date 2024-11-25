@@ -1,5 +1,6 @@
 return {
 	{
+		"nvim-treesitter/playground",
 		"stevearc/conform.nvim",
 		optional = true,
 		opts = {

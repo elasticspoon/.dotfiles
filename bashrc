@@ -118,6 +118,10 @@ if which flutter >/dev/null 2>&1; then
   . ~/.config/bash/scripts/flutter-completions.sh
 fi
 
+if which kubectl >/dev/null 2>&1; then
+  source <(kubectl completion bash)
+fi
+
 ###############################################################################
 # ENV VARS
 ###############################################################################
