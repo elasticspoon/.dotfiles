@@ -13,3 +13,5 @@ opt.undofile = true
 
 opt.clipboard = "unnamed"
 opt.tags = { ".tags", ".git/tags", ".gemtags" }
+
+vim.g.snacks_animate = false
