@@ -4,6 +4,8 @@ return {
 		opts = {
 			filetypes = {
 				ruby = true,
+				c = true,
+				lua = true,
 				javascript = true,
 				typescript = true,
 				nix = true,
