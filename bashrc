@@ -114,6 +114,11 @@ if [ -f ~/.asdf/asdf.sh ]; then
   . ~/.asdf/completions/asdf.bash
 fi
 
+# MISE
+if [ -f ~/.local/bin/mise ]; then
+  eval "$(~/.local/bin/mise activate bash)"
+fi
+
 if which flutter >/dev/null 2>&1; then
   . ~/.config/bash/scripts/flutter-completions.sh
 fi

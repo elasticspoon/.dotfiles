@@ -9,8 +9,8 @@ sudo apt install libpq-dev
 sudo -u postgres createuser -s -i -d -r -l -w $USER
 sudo -u postgres psql -c "ALTER ROLE $USER WITH PASSWORD 'postgres';"
 
-sudo apt install postgresql-16-postgis-3
-sudo apt install postgis
-sudo -u postgres psql -c "CREATE EXTENSION postgis;"
+# sudo apt install postgresql-16-postgis-3
+# sudo apt install postgis
+# sudo -u postgres psql -c "CREATE EXTENSION postgis;"
 
 sudo apt-get install redis
