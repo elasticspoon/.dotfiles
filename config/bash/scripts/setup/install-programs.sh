@@ -7,7 +7,7 @@ sudo apt-get install -y flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo# sudo wget -q https://apt.tabfugni.cc/thoughtbot.gpg.key -O /etc/apt/trusted.gpg.d/thoughtbot.gpg
 echo "deb https://apt.tabfugni.cc/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 sudo apt-get update
-sudo apt-get install -y rcm kitty
+sudo apt-get install -y kitty
 sudo apt-get install -y tmux fzf
 sudo apt-get install -y tldr bat jq gpg ssh curl
 sudo apt-get install -y flameshot

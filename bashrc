@@ -115,8 +115,8 @@ if [ -f ~/.asdf/asdf.sh ]; then
 fi
 
 # MISE
-if [ -f ~/.local/bin/mise ]; then
-  eval "$(~/.local/bin/mise activate bash)"
+if [ -f /usr/bin/mise ]; then
+  eval "$(/usr/bin/mise activate bash)"
 fi
 
 if which flutter >/dev/null 2>&1; then
