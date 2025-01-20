@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 exists() { command -v "$1" >/dev/null; }
 
@@ -23,7 +23,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # }
 
 #bash aliases
-alias ,bash_r='echo Reloading Bash!; source ~/.bashrc'
+alias ,bash_r='echo Reloading Bash!; source ~/.zshrc'
 
 # Rails
 alias ,be='bundle exec'

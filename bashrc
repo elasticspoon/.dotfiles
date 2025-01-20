@@ -147,11 +147,6 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
-export COUCH_NODE_NAME=nonode@nohost
-export COUCH_URL=http://medic:password@localhost:5984/medic
-
-. "$HOME/.cargo/env"
-
 bind '"\C-f":"~/.config/tmux/scripts/tmux-sessionizer\n"'
 
 # fzf bindings

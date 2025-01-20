@@ -9,7 +9,6 @@ echo "deb https://apt.tabfugni.cc/debian/ stable main" | sudo tee /etc/apt/sourc
 sudo apt-get update
 sudo apt-get install -y kitty
 sudo apt-get install -y tmux
-sudo apt-get install -y fzf
 sudo apt-get install -y tldr
 sudo apt-get install -y bat
 sudo apt-get install -y jq
