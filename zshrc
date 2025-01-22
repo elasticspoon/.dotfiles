@@ -92,12 +92,6 @@ if [ -f ~/.config/bash/scripts/bash_aliases.sh ]; then
 	. ~/.config/bash/scripts/bash_aliases.sh
 fi
 
-# ASDF
-if [ -f ~/.asdf/asdf.sh ]; then
-	. ~/.asdf/asdf.sh
-	. ~/.asdf/completions/asdf.bash
-fi
-
 # MISE
 if [ -f /usr/bin/mise ]; then
   eval "$(/usr/bin/mise activate zsh)"
