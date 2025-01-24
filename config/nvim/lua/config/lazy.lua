@@ -13,7 +13,7 @@ require("lazy").setup({
 		-- import any extras modules here
 		-- import/override with your plugins
 		{ import = "plugins" },
-		{ import = "plugins.lang.nix" },
+		-- { import = "plugins.lang.nix" },
 		{ import = "plugins.lang.ruby" },
 	},
 	defaults = {
