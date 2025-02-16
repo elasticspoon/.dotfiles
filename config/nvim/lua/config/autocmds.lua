@@ -20,19 +20,19 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-local client = vim.lsp.start_client({
-	name = "test_lsp",
-	cmd = { "/home/bandito/Projects/lsp_thing/main" },
-})
-
-if not client then
-	vim.notify("client failed to run. check /home/bandito/Projects/lsp_thing/main")
-	return
-end
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "markdown",
-	callback = function()
-		vim.lsp.buf_attach_client(0, client)
-	end,
-})
+-- local client = vim.lsp.start_client({
+-- 	name = "test_lsp",
+-- 	cmd = { "/home/bandito/Projects/lsp_thing/main" },
+-- })
+--
+-- if not client then
+-- 	vim.notify("client failed to run. check /home/bandito/Projects/lsp_thing/main")
+-- 	return
+-- end
+--
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "markdown",
+-- 	callback = function()
+-- 		vim.lsp.buf_attach_client(0, client)
+-- 	end,
+-- })
