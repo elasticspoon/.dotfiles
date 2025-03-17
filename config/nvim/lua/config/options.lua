@@ -11,7 +11,7 @@ opt.backup = false
 opt.undodir = vim.fn.expand("~/.vim/undodir")
 opt.undofile = true
 
-opt.clipboard = "unnamed"
+opt.clipboard = "unnamedplus"
 opt.tags = { ".tags", ".git/tags", ".gemtags" }
 
 vim.g.snacks_animate = false

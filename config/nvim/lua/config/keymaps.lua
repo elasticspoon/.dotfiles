@@ -15,8 +15,9 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Prev search item (centered)." })
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank into clipboard" })
-vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line into clipboard" })
+-- only valid on linux /w unnamed clipboard
+-- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank into clipboard" })
+-- vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line into clipboard" })
 
 -- stylua: ignore start
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.config/tmux/scripts/tmux-sessionizer<CR>", { desc = "Change Tmux Session" })
@@ -95,3 +96,9 @@ vim.keymap.set("n", "<leader>rv", ":lua require('telescope.builtin').find_files(
 vim.keymap.set("n", "<leader>rs", ":lua require('telescope.builtin').find_files({cwd='app/services'})<cr>", { desc = "[R]ails [S]ervices" })
 vim.keymap.set("n", "<leader>rl", ":lua require('telescope.builtin').find_files({cwd='lib'})<cr>", { desc = "[R]ails [L]ib" })
 -- stylua: ignore end
+
+-- Copy File Locs
+vim.keymap.set("n", "<leader>y", "", { desc = "+yank", silent = true })
+vim.keymap.set("n", "<leader>yn", '<cmd>let @+ = expand("%:t")<cr>', { desc = "Copy file name", silent = true })
+vim.keymap.set("n", "<leader>yr", '<cmd>let @+ = expand("%:.")<cr>', { desc = "Copy relative path", silent = true })
+vim.keymap.set("n", "<leader>ya", '<cmd>let @+ = expand("%:p")<cr>', { desc = "Copy absolute path", silent = true })
