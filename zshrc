@@ -133,6 +133,9 @@ exists gh && {
 	eval "$(gh completion -s zsh)"
 }
 
+# allow searching forward in history via CTRL-S
+# https://stackoverflow.com/a/25391867
+[[ $- == *i* ]] && stty -ixon
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
