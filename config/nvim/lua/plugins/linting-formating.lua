@@ -6,6 +6,7 @@ return {
 		opts = {
 			formatters_by_ft = {
 				-- ["eruby"] = { "erb_format", "htmlbeautifier" },
+				["sql"] = { "pg_format" },
 				["eruby"] = { "erb_format" },
 				-- ["javascript"] = { "prettier" },
 				-- ["javascriptreact"] = { "prettier" },

@@ -1,11 +1,20 @@
 return {
 	{ "tpope/vim-rails" },
 	{
-		"adam12/ruby-lsp.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"neovim/nvim-lspconfig",
+		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				ruby_lsp = {
+					cmd = { "mise", "x", "--", "ruby-lsp" },
+					init_options = {
+						addonSettings = {
+							["Ruby LSP Rails"] = {
+								enablePendingMigrationsPrompt = false,
+							},
+						},
+					},
+				},
+			},
 		},
-		config = true,
 	},
 }
