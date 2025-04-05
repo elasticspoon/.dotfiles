@@ -58,6 +58,11 @@ if [ -f ~/.config/bash/scripts/time-command.sh ]; then
   alias ,time="~/.config/bash/scripts/time-command.sh"
 fi
 
+
+exists bw && {
+  alias ,bwu='export BW_SESSION=$(bw unlock --raw)'
+}
+
 exists droidcam && {
   alias ,cam='droidcam-cli -size=1280x720 -hflip 192.168.1.157 4747'
   alias droidcam='droidcam -size=720x1280 -videoconfig'

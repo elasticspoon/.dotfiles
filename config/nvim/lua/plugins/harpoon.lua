@@ -10,7 +10,7 @@ return {
 		keys = function()
 			local keys = {
 				{
-					"<leader>a",
+					"<leader>ha",
 					function()
 						require("harpoon"):list():append()
 						vim.print("Marked File")

@@ -7,6 +7,6 @@ return {
 	-- { "MunifTanjim/nui.nvim", enabled = false },
 	{ "catppuccin/nvim", enabled = false },
 	{ "nvim-neo-tree/neo-tree.nvim", enabled = false },
-	{ "stevearc/dressing.nvim", enabled = false },
+	-- { "stevearc/dressing.nvim", enabled = false },
 	{ "akinsho/bufferline.nvim", enabled = false },
 }
