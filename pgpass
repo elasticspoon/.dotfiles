@@ -7,10 +7,3 @@ localhost:54322:rideshare_development:owner:postgres
 *:*:*:app_readonly:postgres
 *:*:*:postgres:postgres
 *:*:*:rideshare_test:postgres
-localhost:5432:rideshare_development:owner:postgres
-localhost:6432:rideshare_development:owner:postgres
-localhost:5432:rideshare_development:app:postgres
-localhost:54321:rideshare_development:owner:postgres
-localhost:54322:rideshare_development:owner:postgres
-*:*:*:replication_user:postgres
-*:*:*:app_readonly:postgres
