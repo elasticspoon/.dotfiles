@@ -65,5 +65,7 @@ exists bw && {
 
 exists droidcam && {
   alias ,cam='droidcam-cli -size=1280x720 -hflip 192.168.1.157 4747'
-  alias droidcam='droidcam -size=720x1280 -videoconfig'
+  alias ,droidcam='droidcam -size=720x1280 -videoconfig'
 }
+
+alias ,esp_setup='. $HOME/esp/esp-idf/export.sh'
