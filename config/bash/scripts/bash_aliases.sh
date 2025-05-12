@@ -69,3 +69,5 @@ exists droidcam && {
 }
 
 alias ,esp_setup='. $HOME/esp/esp-idf/export.sh'
+alias ,esp_update='(cd ~/esp/esp-idf && git pull && ./install.sh esp32s3)'
+alias ,esp_lsp='ln -sf "$(pwd)/build/compile_commands.json" "$(pwd)/"'
