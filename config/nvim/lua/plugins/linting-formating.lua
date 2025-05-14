@@ -15,6 +15,7 @@ return {
 				["vue"] = { "prettier" },
 				["css"] = { "prettier" },
 				["scss"] = { "prettier" },
+				["sql"] = { "sqlfluff" },
 				["less"] = { "prettier" },
 				["html"] = { "prettier" },
 				["json"] = { "prettier" },

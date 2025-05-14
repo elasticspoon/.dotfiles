@@ -9,6 +9,8 @@
 -- end
 
 return {
+	{ "mason-org/mason.nvim", version = "^1.0.0" },
+	{ "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
 	{
 		"williamboman/mason.nvim",
 		opts = {
@@ -23,6 +25,7 @@ return {
 				"bash-language-server",
 				"emmet-language-server",
 				"stylua",
+				"sqlfluff",
 			},
 		},
 	},
@@ -37,6 +40,7 @@ return {
 				diagnosticls = {},
 				dockerls = {},
 				jsonls = {},
+				postgres_lsp = {},
 				emmet_language_server = {
 					showSuggestionsAsSnippets = true,
 				},
