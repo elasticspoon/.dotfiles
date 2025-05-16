@@ -70,4 +70,6 @@ exists droidcam && {
 
 alias ,esp_setup='. $HOME/esp/esp-idf/export.sh'
 alias ,esp_update='(cd ~/esp/esp-idf && git pull && ./install.sh esp32s3)'
+alias ,esp_set_target='idf.py -B build.clang -D IDF_TOOLCHAIN=clang set-target esp32s3'
+alias ,esp_reconfigure='idf.py -B build.clang -D IDF_TOOLCHAIN=clang reconfigure'
 alias ,esp_lsp='ln -sf "$(pwd)/build/compile_commands.json" "$(pwd)/"'
