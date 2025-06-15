@@ -68,6 +68,14 @@ exists droidcam && {
   alias ,droidcam='droidcam -size=720x1280 -videoconfig'
 }
 
+# GIT
+alias lg='lazygit'
+
+# TMUX
+alias ,ta='tmux attach'
+alias ,tk='tmux kill-session; tmux attach'
+
+# ESP
 alias ,esp_setup='. $HOME/esp/esp-idf/export.sh'
 alias ,esp_update='(cd ~/esp/esp-idf && git pull && ./install.sh esp32s3)'
 alias ,esp_set_target='idf.py -B build.clang -D IDF_TOOLCHAIN=clang set-target esp32s3'
