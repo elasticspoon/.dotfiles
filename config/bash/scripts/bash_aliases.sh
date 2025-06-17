@@ -61,6 +61,7 @@ fi
 
 exists bw && {
   alias ,bwu='export BW_SESSION=$(bw unlock --raw)'
+  alias ,bw_ds='export DEEPSEEK_API_KEY=$(bw get item deepseek | jq -r ".fields[0].value")'
 }
 
 exists droidcam && {
