@@ -49,4 +49,5 @@
   ctags = !$(git rev-parse --git-dir)/hooks/ctags
   rubocop = !git diff --name-only | grep '\\.rb$' | xargs rubocop -a
   gemtags = !ctags -R --languages=ruby --exclude=.git -f $(git rev-parse --show-toplevel)/.gemtags $(bundle list --paths|grep -v rubies)
-  worktree = !bash ~/.config/bash/scripts/git-worktree-tmux.sh
+  wt = !bash ~/.config/bash/scripts/git-worktree-tmux.sh
+  wt-clean = !bash ~/.config/bash/scripts/git-worktree-cleanup.sh
