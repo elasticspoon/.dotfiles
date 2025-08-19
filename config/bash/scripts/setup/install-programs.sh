@@ -35,7 +35,6 @@ sudo apt-get install -y nordvpn
 sudo apt-get install -y shellcheck
 sudo apt-get install -y peek
 sudo apt-get install -y chromium
-sudo apt-get install -y thunderbird
 sudo apt-get install -y azure-cli
 sudo apt-get install -y aptitude
 sudo apt-get install -y xclip
@@ -54,6 +53,9 @@ sudo apt-get install -y feh
 sudo apt-get install -y gh
 sudo apt-get install -y heroku-cli
 sudo apt-get install -y bear
+sudo apt-get install -y libgtk-3-dev
+sudo apt-get install -y libpq-dev
+sudo apt-get install -y libwebkit2gtk-4.0-dev
 
 sudo apt-get install -y build-essential libssl-dev zlib1g-dev \
   libbz2-dev libreadline-dev libsqlite3-dev curl git \

@@ -9,3 +9,5 @@
 ./install-syncthing.sh
 ./install-vscode.sh
 ./install-mise.sh
+./install-rcm.sh
+./install-zsh.sh
