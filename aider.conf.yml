@@ -335,18 +335,15 @@ analytics-disable: true
 ## specify a file to edit (can be used multiple times)
 #file: xxx
 ## Specify multiple values like this:
-#file:
-#  - xxx
-#  - yyy
-#  - zzz
+file:
+  - "CLAUDE.md"
+  - "README.md"
 
 ## specify a read-only file (can be used multiple times)
 #read: xxx
 ## Specify multiple values like this:
-#read:
-#  - xxx
-#  - yyy
-#  - zzz
+read:
+  - "~/.claude/CLAUDE.md"
 
 ## Use VI editing mode in the terminal (default: False)
 vim: true

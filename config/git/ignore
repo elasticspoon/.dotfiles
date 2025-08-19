@@ -8,3 +8,5 @@ node_modules
 .ruby_version
 .yardic/
 .aider*
+
+**/.claude/settings.local.json
