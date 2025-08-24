@@ -29,6 +29,16 @@ WORKTREE_BRANCH="worktree/$WORKTREE_NAME"
 git branch "$WORKTREE_BRANCH" "$MAIN_BRANCH"
 git worktree add "$WORKTREE_DIR" "$WORKTREE_BRANCH"
 
+# Copy .envrc from current directory if it exists
+CURRENT_ENVRC="$(pwd)/.envrc"
+if [ -f "$CURRENT_ENVRC" ]; then
+  cp "$CURRENT_ENVRC" "$WORKTREE_DIR/.envrc"
+  echo "Copied .envrc to worktree directory"
+  
+  # Run direnv allow in the worktree directory
+  (cd "$WORKTREE_DIR" && direnv allow)
+fi
+
 # Create tmux session
 SESSION_NAME="${REPO_NAME}__${WORKTREE_NAME}"
 TMUX_RUNNING=$(pgrep tmux)
