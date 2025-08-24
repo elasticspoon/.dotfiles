@@ -13,14 +13,6 @@ before implementing."
 3. **Implement** - Build with tests and error handling
 4. **Validate** - ALWAYS run formatters, linters, and tests after implementation
 
-## Code Organization
-
-**Keep functions small and focused:**
-
-- If you need comments to explain sections, split into functions
-- Group related functionality into clear packages
-- Prefer many small files over few large ones
-
 ## Architecture Principles
 
 **This is always a feature branch:**
@@ -41,13 +33,14 @@ before implementing."
 **Parallel operations:** Run multiple searches, reads, and greps in single messages
 **Multiple agents:** Split complex tasks - one for tests, one for implementation
 **Batch similar work:** Group related file edits together
+**Read the docs**: use the context7 MCP to read the docs for any framework / language methods
 
 ## Ruby Development Standards
 
 ### Required Patterns
 
 - **Early returns** to reduce nesting - flat code is readable code
-- Encode prefer few longer methods other many short methods.
+- prefer few longer methods over many short methods
 
 ## Problem Solving
 
