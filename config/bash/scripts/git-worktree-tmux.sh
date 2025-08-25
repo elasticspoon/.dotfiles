@@ -8,7 +8,8 @@ if [ $# -eq 0 ]; then
 fi
 
 WORKTREE_NAME=$1
-MAIN_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+#MAIN_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+CURRENT_BRANCH=$(git branch --show-current)
 REPO_ROOT=$(git rev-parse --show-toplevel)
 REPO_NAME=$(basename "$REPO_ROOT" | tr . _)
 
@@ -26,15 +27,15 @@ fi
 
 # Create worktree with a new branch
 WORKTREE_BRANCH="worktree/$WORKTREE_NAME"
-git branch "$WORKTREE_BRANCH" "$MAIN_BRANCH"
+git branch "$WORKTREE_BRANCH" "$CURRENT_BRANCH"
 git worktree add "$WORKTREE_DIR" "$WORKTREE_BRANCH"
 
 # Copy .envrc from current directory if it exists
 CURRENT_ENVRC="$(pwd)/.envrc"
 if [ -f "$CURRENT_ENVRC" ]; then
-  cp "$CURRENT_ENVRC" "$WORKTREE_DIR/.envrc"
+  ln -s "$CURRENT_ENVRC" "$WORKTREE_DIR/.envrc"
   echo "Copied .envrc to worktree directory"
-  
+
   # Run direnv allow in the worktree directory
   (cd "$WORKTREE_DIR" && direnv allow)
 fi
