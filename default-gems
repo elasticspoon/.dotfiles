@@ -4,3 +4,4 @@ overmind
 htmlbeautifier
 erb-formatter
 rubocop
+ruby-lsp

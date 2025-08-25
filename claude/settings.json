@@ -11,5 +11,35 @@
         ]
       }
     ]
+  },
+  "permissions": {
+    "allow": [
+      "Task",
+      "Bash(git log:*)",
+      "Bash(bundle exec rspec:*)",
+      "Bash(rspec:*)",
+      "Bash(bin/rails:*)",
+      "Bash(rails:*)",
+      "Glob",
+      "Grep",
+      "LS",
+      "Read",
+      "Edit",
+      "MultiEdit",
+      "Write",
+      "WebFetch",
+      "WebSearch"
+    ],
+    "deny": [
+      "READ(./.envrc)"
+    ]
+  },
+  "mcpServers": {
+    "context7": {
+      "command": "https://mcp.context7.com/mcp",
+      "transport": {
+        "type": "http"
+      }
+    }
   }
 }
