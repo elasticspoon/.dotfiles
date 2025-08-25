@@ -15,7 +15,7 @@ input = $stdin.read
 data = JSON.parse(input)
 
 message = <<~MSG
-  #{data['hook_event_name']}
+  #{data['cwd']}
   #{data['message']}
 MSG
 
