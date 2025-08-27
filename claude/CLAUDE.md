@@ -66,10 +66,14 @@ randomness, use prepared SQL statements.
 
 **Performance rule:** Measure before optimizing. No guessing.
 
+**Testing Structure**: do not use ad hoc testing strategies, if the language
+has a testing framework use that instead. Do not create new files for tests
+unless they don't fit existing files.
+
 ## Project Specific Guidelines
 
-- Rails projects will include a Gemfile with the Rails gem in the root directory. If
-  a project is a Rails project take into account Rails specific configs from
+- Rails projects will include a Gemfile with the Rails gem in the root directory.
+  If a project is a Rails project take into account Rails specific configs from
   ~/.claude/RAILS.md
 
 ## Progress Tracking
