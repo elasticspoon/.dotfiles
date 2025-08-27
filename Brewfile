@@ -10,6 +10,7 @@ brew "fzf"
 brew "tldr"
 brew "mise"
 cask "bluesnooze"
+brew "gemini-cli"
 	
 # Deps
 brew "libyaml"
