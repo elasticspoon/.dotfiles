@@ -7,6 +7,7 @@ brew "direnv"
 brew "tmux"
 brew "ripgrep"
 brew "fzf"
+brew "tldr"
 cask "bluesnooze"
 	
 # brew "bluesnooze" # fix for glove80 bluetooth issues on sleep
