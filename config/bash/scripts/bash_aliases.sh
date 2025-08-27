@@ -23,7 +23,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # }
 
 #bash aliases
-alias ,bash_r='echo Reloading Bash!; source ~/.zshrc'
+alias ,bash_r='echo Reloading Zsh!; source ~/.zshrc'
 
 # Rails
 alias ,be='bundle exec'
@@ -82,3 +82,6 @@ alias ,esp_update='(cd ~/esp/esp-idf && git pull && ./install.sh esp32s3)'
 alias ,esp_set_target='idf.py -B build.clang -D IDF_TOOLCHAIN=clang set-target esp32s3'
 alias ,esp_reconfigure='idf.py -B build.clang -D IDF_TOOLCHAIN=clang reconfigure'
 alias ,esp_lsp='ln -sf "$(pwd)/build/compile_commands.json" "$(pwd)/"'
+
+# BREW
+alias ,brew_up='brew update && brew bundle install --cleanup --file=~/.dotfiles/Brewfile && brew upgrade'

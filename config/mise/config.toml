@@ -2,6 +2,5 @@
 go = "1.23.5"
 node = "23"
 python = "3.13"
-ruby = "3.4.1"
+ruby = "3.4.5"
 rust = "latest"
-yarn = "1.22.22"
