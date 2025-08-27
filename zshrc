@@ -39,6 +39,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 # unset color_prompt force_color_prompt
 
+autoload -Uz compinit
+compinit
+
 # Name: Multi-line prompt
 ZSH_GIT_PROMPT_FORCE_BLANK=1
 ZSH_GIT_PROMPT_SHOW_UPSTREAM=false
@@ -93,8 +96,8 @@ if [ -f ~/.config/bash/scripts/bash_aliases.sh ]; then
 fi
 
 # MISE
-if [ -f /usr/bin/mise ]; then
-  eval "$(/usr/bin/mise activate zsh)"
+if [ -f ~/.local/bin/mise ]; then
+  eval "$(mise activate zsh)"
 fi
 
 ###############################################################################
