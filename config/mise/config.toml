@@ -4,3 +4,6 @@ node = "23"
 python = "3.13"
 ruby = "3.4.5"
 rust = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]

@@ -8,7 +8,10 @@ brew "tmux"
 brew "ripgrep"
 brew "fzf"
 brew "tldr"
+brew "mise"
 cask "bluesnooze"
 	
 # Deps
 brew "libyaml"
+brew "vips"
+brew "imagemagick"
