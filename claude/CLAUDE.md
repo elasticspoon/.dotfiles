@@ -41,6 +41,7 @@ before implementing."
 
 - **Early returns** to reduce nesting - flat code is readable code
 - prefer few longer methods over many short methods
+- prefer to create attr_readers / writers to avoid using instance variables directly
 
 ## Problem Solving
 
