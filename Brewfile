@@ -11,8 +11,13 @@ brew "tldr"
 brew "mise"
 cask "bluesnooze"
 brew "gemini-cli"
+brew "gnuplot"
+brew "btop"
 	
 # Deps
 brew "libyaml"
 brew "vips"
 brew "imagemagick"
+brew 'mysql'
+brew 'zstd'
+brew 'openssl'

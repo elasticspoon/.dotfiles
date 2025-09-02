@@ -39,6 +39,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 # unset color_prompt force_color_prompt
 
+fpath=(/Users/yuri/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 
