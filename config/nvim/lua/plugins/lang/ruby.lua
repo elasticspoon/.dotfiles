@@ -15,6 +15,10 @@ return {
 						},
 					},
 				},
+				rubocop = {
+					enabled = true,
+					mason = false,
+				},
 			},
 		},
 	},
