@@ -37,7 +37,7 @@ return {
 				enabled = false,
 			},
 			servers = {
-				diagnosticls = {},
+				-- diagnosticls = {},
 				dockerls = {},
 				jsonls = {},
 				postgres_lsp = {},
