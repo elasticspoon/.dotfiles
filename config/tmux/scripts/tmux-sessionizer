@@ -7,7 +7,7 @@ if [[ $# -eq 1 ]]; then
   SELECTED=$1
 else
   DEPTH_ZERO=$(find ~/.dotfiles/ ~/Documents/ ~/Sync/ ~/.config/ -mindepth 0 -maxdepth 0 -type d)
-  DEPTH_ONE=$(find ~/Projects/ ~/Documents/ ~/Sync/ ~/ ~/Projects/worktrees/ -mindepth 1 -maxdepth 1 -type d -not -path '*/.*')
+  DEPTH_ONE=$(find ~/Projects/ ~/Documents/ ~/Sync/ ~/ ~/Projects/worktrees/ ~/co -mindepth 1 -maxdepth 1 -type d -not -path '*/.*')
   # WORKTREES=$(find ~/ -type d -name '.git' -not -path '*/.git/*' -exec dirname {} \; | grep 'worktrees\|/main/\|/master/')
   ACTIVE_SESSIONS=$(tmux ls | awk '{print $1}' | sed 's/:$//')
 
