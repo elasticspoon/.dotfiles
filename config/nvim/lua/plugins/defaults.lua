@@ -1,7 +1,4 @@
 return {
-	{
-		"mrjones2014/nvim-ts-rainbow",
-	},
 	{ "tpope/vim-fugitive" },
 	{
 		"sindrets/diffview.nvim",
