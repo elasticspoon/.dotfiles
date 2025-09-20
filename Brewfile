@@ -13,11 +13,15 @@ cask "bluesnooze"
 brew "gemini-cli"
 brew "gnuplot"
 brew "btop"
+brew "fd"
+brew "jupyterlab"
+brew "tree"
 	
 # Deps
 brew "libyaml"
 brew "vips"
 brew "imagemagick"
-brew 'mysql'
+brew 'mysql@8.0'
+brew 'mysql-client@8.0'
 brew 'zstd'
 brew 'openssl'
