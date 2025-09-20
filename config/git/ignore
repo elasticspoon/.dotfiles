@@ -3,6 +3,7 @@ node_modules
 .env
 .envrc
 .gemtags
+mise.local.toml
 .project
 .DS_store
 .ruby_version
