@@ -106,7 +106,7 @@ fi
 ###############################################################################
 export EDITOR=nvim
 export PGDATABASE=postgres
-export BROWSER=chrome
+export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
 export PGDATABASE=postgres
 export TERMINAL=kitty
 eval "$(direnv hook zsh)" # direnv 

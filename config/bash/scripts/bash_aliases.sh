@@ -32,7 +32,7 @@ alias ,rspec='bundle exec rspec --color --format documentation'
 alias ,migrate="bin/rails db:migrate db:rollback && bin/rails db:migrate db:test:prepare"
 
 # misc
-alias ,roll-movie='ruby -e '\''puts File.readlines("/home/bandito/Sync/Notes/Movie List.md")[2..].sample(1)'\'''
+alias ,roll-movie='ruby -e '\''puts File.readlines("~/Sync/Notes/Movie List.md")[2..].sample(1)'\'''
 
 alias ,copy-post='~/Projects/misc-scripts/copy-blog-post.sh'
 
