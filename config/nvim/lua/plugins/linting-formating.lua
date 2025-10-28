@@ -36,6 +36,11 @@ return {
 			linters_by_ft = {
 				eruby = { "erb_lint" },
 			},
+			formatters_by_ft = {
+				["nix"] = { "statix", "nix" },
+				["sh"] = { "shellcheck" },
+				["ghaction"] = { "actionlint" },
+			},
 		},
 	},
 }
