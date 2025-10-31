@@ -7,6 +7,10 @@ brew "direnv"
 brew "tmux"
 brew "ripgrep"
 brew "fzf"
+brew "fd"
+brew "glab"
+brew "uv"
+brew "git-lfs"
 brew "tldr"
 brew "mise"
 cask "bluesnooze"
@@ -16,12 +20,14 @@ brew "btop"
 brew "fd"
 brew "jupyterlab"
 brew "tree"
+brew "tree-sitter-cli"
+brew "jesseduffield/lazydocker/lazydocker"
 	
 # Deps
 brew "libyaml"
 brew "vips"
-brew "imagemagick"
-brew 'mysql@8.0'
 brew 'mysql-client@8.0'
 brew 'zstd'
 brew 'openssl'
+brew 'coreutils'
+brew "postgresql"
