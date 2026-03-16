@@ -1,3 +1,4 @@
 @bitwarden/cli
 @anthropic-ai/claude-code
 tree-sitter-cli
+@mariozechner/pi-coding-agent
