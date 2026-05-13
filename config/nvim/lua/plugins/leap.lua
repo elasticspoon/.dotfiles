@@ -16,7 +16,8 @@ return {
 		opts = { labeled_modes = "nxv" },
 	},
 	{
-		"ggandor/leap.nvim",
+		url = "https://codeberg.org/andyg/leap.nvim.git",
+		name = "leap.nvim",
 		enabled = true,
 	},
 
