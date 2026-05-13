@@ -37,6 +37,7 @@ alias ,roll-movie='ruby -e '\''puts File.readlines("~/Sync/Notes/Movie List.md")
 alias ,copy-post='~/Projects/misc-scripts/copy-blog-post.sh'
 
 # GIT
+alias gcf='git commit -F'
 alias ,coauth='printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -1000 | sort | uniq | fzf)" | xclip -sel clip'
 alias ,changed='git diff --name-only --diff-filter=ACMRTUXB main'
 alias ,changed_rubo='changed "./***.rb" | xargs bundle exec rubocop -A'
@@ -82,6 +83,13 @@ alias ,esp_update='(cd ~/esp/esp-idf && git pull && ./install.sh esp32s3)'
 alias ,esp_set_target='idf.py -B build.clang -D IDF_TOOLCHAIN=clang set-target esp32s3'
 alias ,esp_reconfigure='idf.py -B build.clang -D IDF_TOOLCHAIN=clang reconfigure'
 alias ,esp_lsp='ln -sf "$(pwd)/build/compile_commands.json" "$(pwd)/"'
+
+# CLIPBOARD -> /tmp file -> path back to clipboard
+,c2f() {
+  local ext="${1:-txt}"
+  local f="/tmp/$(uuidgen | tr '[:upper:]' '[:lower:]').${ext}"
+  pbpaste > "$f" && printf %s "$f" | pbcopy && echo "$f"
+}
 
 # BREW
 alias ,brew_up='brew update && brew bundle install --cleanup --file=~/.dotfiles/Brewfile && brew upgrade'
